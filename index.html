@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel to HTML - Choose Your Method</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .card .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .card li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .info {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .info h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .info p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Excel to HTML</h1>
+            <p>Choose the method that works best for you</p>
+        </div>
+        
+        <div class="cards">
+            <div class="card">
+                <span class="badge">RECOMMENDED</span>
+                <h2>Interactive Viewer</h2>
+                <p>Upload and view any Excel file dynamically in your browser.</p>
+                <ul>
+                    <li>Upload .xlsx, .xls, or .csv files</li>
+                    <li>Multiple sheet support</li>
+                    <li>Drag & drop interface</li>
+                    <li>Privacy-first (no uploads)</li>
+                </ul>
+                <a href="viewer.html" class="button">Open Viewer →</a>
+            </div>
+            
+            <div class="card">
+                <span class="badge">EXAMPLE</span>
+                <h2>Embedded Data</h2>
+                <p>See how to embed Excel data directly in HTML for static sharing.</p>
+                <ul>
+                    <li>No external libraries</li>
+                    <li>Works completely offline</li>
+                    <li>Perfect for snapshots</li>
+                    <li>Easy to customize</li>
+                </ul>
+                <a href="embedded-example.html" class="button">View Example →</a>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>🚀 Quick Start</h3>
+            <p><strong>To share with Copilot:</strong></p>
+            <p>1. Use the Interactive Viewer to upload your Excel file</p>
+            <p>2. Take a screenshot or share the repository URL</p>
+            <p>3. Copilot can view your data and help you with analysis</p>
+            <p style="margin-top: 20px;"><strong>Sample Data:</strong> This repository includes <code>sample_data.xlsx</code> to test the viewer.</p>
+        </div>
+    </div>
+</body>
+</html>
