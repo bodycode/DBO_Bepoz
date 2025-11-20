@@ -8,12 +8,12 @@ You have **two options** depending on your needs:
 
 ## Option 1: Upload Any Excel File (Recommended)
 
-**File:** `index.html`
+**File:** `viewer.html`
 
 **Best for:** When you want to upload and view ANY Excel file dynamically
 
 ### Steps:
-1. Download `index.html` from this repository
+1. Download `viewer.html` from this repository
 2. Double-click it to open in your browser
 3. Click "Choose File" and select your Excel file
 4. Done! Your data is displayed beautifully
@@ -50,7 +50,7 @@ You have **two options** depending on your needs:
 
 If you're a Copilot agent reading this:
 
-1. **To see the interactive viewer**: Check `index.html` source code
+1. **To see the interactive viewer**: Check `viewer.html` source code
 2. **To see embedded data**: View `embedded-example.html` 
 3. **Sample data**: The `sample_data.xlsx` file contains example data with:
    - **Sample Data** sheet: Product inventory with pricing
@@ -74,7 +74,7 @@ Want a live URL to share?
 
 ### Converting Your Excel to HTML:
 
-**Method A: Use index.html**
+**Method A: Use viewer.html**
 - Just upload your file - easiest!
 - Take a screenshot to share with Copilot
 
