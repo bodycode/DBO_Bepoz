@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Excel Data Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            padding: 40px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .sheet-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .sheet-tab {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        .sheet-tab:hover {
+            background: #e0e0e0;
+        }
+        
+        .sheet-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .table-wrapper.active {
+            display: block;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Excel Data - Embedded Example</h1>
+            <p>Sample data from sample_data.xlsx</p>
+        </div>
+        
+        <div class="content-section">
+            <div class="info-box">
+                <h3>💡 Alternative Method: Embedded Data</h3>
+                <p>This is an example of embedding Excel data directly into HTML. This method:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Works without any external libraries</li>
+                    <li>Data is directly embedded in the HTML</li>
+                    <li>Perfect for sharing static snapshots of your Excel data</li>
+                    <li>Use <strong>index.html</strong> for uploading and viewing any Excel file dynamically</li>
+                </ul>
+            </div>
+            
+            <div class="sheet-tabs">
+                <button class="sheet-tab active" onclick="showSheet('sheet1')">Sample Data</button>
+                <button class="sheet-tab" onclick="showSheet('sheet2')">Sales Summary</button>
+            </div>
+            
+            <div id="sheet1" class="table-wrapper active">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Laptop</td>
+                            <td>Electronics</td>
+                            <td>$999.99</td>
+                            <td>5</td>
+                            <td>$4,999.95</td>
+                        </tr>
+                        <tr>
+                            <td>Mouse</td>
+                            <td>Electronics</td>
+                            <td>$29.99</td>
+                            <td>15</td>
+                            <td>$449.85</td>
+                        </tr>
+                        <tr>
+                            <td>Keyboard</td>
+                            <td>Electronics</td>
+                            <td>$79.99</td>
+                            <td>10</td>
+                            <td>$799.90</td>
+                        </tr>
+                        <tr>
+                            <td>Monitor</td>
+                            <td>Electronics</td>
+                            <td>$299.99</td>
+                            <td>8</td>
+                            <td>$2,399.92</td>
+                        </tr>
+                        <tr>
+                            <td>Desk Chair</td>
+                            <td>Furniture</td>
+                            <td>$199.99</td>
+                            <td>12</td>
+                            <td>$2,399.88</td>
+                        </tr>
+                        <tr>
+                            <td>Desk</td>
+                            <td>Furniture</td>
+                            <td>$399.99</td>
+                            <td>6</td>
+                            <td>$2,399.94</td>
+                        </tr>
+                        <tr>
+                            <td>Notebook</td>
+                            <td>Stationery</td>
+                            <td>$4.99</td>
+                            <td>100</td>
+                            <td>$499.00</td>
+                        </tr>
+                        <tr>
+                            <td>Pen Set</td>
+                            <td>Stationery</td>
+                            <td>$12.99</td>
+                            <td>50</td>
+                            <td>$649.50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="sheet2" class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>January</td>
+                            <td>$15,420.50</td>
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>$18,350.75</td>
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>$16,890.25</td>
+                        </tr>
+                        <tr>
+                            <td>April</td>
+                            <td>$19,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>$21,340.80</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSheet(sheetId) {
+            // Hide all sheets
+            document.querySelectorAll('.table-wrapper').forEach(sheet => {
+                sheet.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.sheet-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected sheet
+            document.getElementById(sheetId).classList.add('active');
+            
+            // Highlight active tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
